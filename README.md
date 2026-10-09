@@ -175,11 +175,18 @@ The dashboard provides:
 ♿ Accessibility-focused interface  
 
 ## ✅ W3C HTML Validation
-The project will be checked using the W3C HTML Validator.
+The dashboard HTML was checked using the W3C Nu HTML Checker.
 
-🎯 Validation Goal: **0 HTML Errors**
+✅ Errors: 0
 
-The validation result can be used as evidence that the HTML structure follows web standards.
+✅ Warnings: 0
+
+✅ Character Encoding: UTF-8
+
+The validator reported that document checking was completed
+with no errors or warnings.
+
+📸 Validation evidence is available in the docs folder.
 
 ## 📸 Project Evidence
 The project can include screenshots showing:
