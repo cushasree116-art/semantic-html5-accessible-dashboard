@@ -269,3 +269,9 @@ It demonstrates accessibility-focused navigation, forms, tables, dialogs, keyboa
 📊 Data Driven  
 ✅ Standards Validated  
 🚀 Ready for Future Development
+
+🌐 Live Demo
+
+🚀 Live Dashboard: "Open Dashboard" (https://cushasree116-art.github.io/semantic-html5-accessible-dashboard/)
+
+💻 Source Code: "View Repository" (https://github.com/cushasree116-art/semantic-html5-accessible-dashboard)
