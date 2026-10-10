@@ -3,261 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <meta name="description" content="An accessible, responsive enterprise dashboard for monitoring users, projects, tasks, and reports.">
+
     <title>Accessible Enterprise Dashboard</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background: #f4f6f8;
-        }
-
-        a {
-            color: #0645ad;
-        }
-
-        a:focus-visible,
-        button:focus-visible,
-        input:focus-visible,
-        select:focus-visible,
-        textarea:focus-visible,
-        dialog:focus-visible {
-            outline: 3px solid #ff9800;
-            outline-offset: 3px;
-        }
-
-        header {
-            padding: 20px;
-            color: #fff;
-            background: #172554;
-        }
-
-        header h1 {
-            margin-top: 0;
-        }
-
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            padding: 0;
-            list-style: none;
-        }
-
-        header nav a {
-            color: #fff;
-            font-weight: bold;
-        }
-
-        .layout {
-            display: grid;
-            grid-template-columns: 220px minmax(0, 1fr);
-            gap: 24px;
-            max-width: 1200px;
-            margin: auto;
-            padding: 24px;
-        }
-
-        aside,
-        section {
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-        }
-
-        aside {
-            align-self: start;
-        }
-
-        aside ul {
-            padding-left: 20px;
-        }
-
-        aside li {
-            margin-bottom: 12px;
-        }
-
-        main {
-            min-width: 0;
-        }
-
-        section {
-            margin-bottom: 24px;
-            scroll-margin-top: 16px;
-        }
-
-        section h2 {
-            margin-top: 0;
-            color: #172554;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        article {
-            padding: 18px;
-            background: #eef2ff;
-            border: 1px solid #c7d2fe;
-            border-radius: 8px;
-        }
-
-        article h3 {
-            margin-top: 0;
-        }
-
-        .number {
-            margin: 8px 0;
-            color: #172554;
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            margin-top: 16px;
-            border-collapse: collapse;
-        }
-
-        caption {
-            padding-bottom: 10px;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        th,
-        td {
-            padding: 12px;
-            border: 1px solid #94a3b8;
-            text-align: left;
-        }
-
-        th {
-            background: #e2e8f0;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            max-width: 100%;
-            padding: 10px;
-            border: 1px solid #64748b;
-            border-radius: 4px;
-            font: inherit;
-        }
-
-        fieldset {
-            margin-bottom: 20px;
-            padding: 18px;
-            border: 1px solid #64748b;
-            border-radius: 6px;
-        }
-
-        legend {
-            padding: 0 8px;
-            font-weight: bold;
-        }
-
-        button {
-            padding: 10px 16px;
-            border: 2px solid #172554;
-            border-radius: 5px;
-            color: #fff;
-            background: #172554;
-            font: inherit;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #263b75;
-        }
-
-        .secondary-button {
-            margin-left: 8px;
-            color: #172554;
-            background: #fff;
-        }
-
-        .secondary-button:hover {
-            color: #fff;
-        }
-
-        dialog {
-            width: min(90%, 480px);
-            padding: 24px;
-            border: 2px solid #172554;
-            border-radius: 8px;
-        }
-
-        dialog::backdrop {
-            background: rgb(0 0 0 / 60%);
-        }
-
-        footer {
-            padding: 20px;
-            color: #fff;
-            background: #172554;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        .status {
-            font-weight: bold;
-        }
-
-        @media (max-width: 760px) {
-            .layout {
-                grid-template-columns: 1fr;
-                padding: 12px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            header,
-            section,
-            aside {
-                padding: 16px;
-            }
-
-            .secondary-button {
-                margin-top: 10px;
-                margin-left: 0;
-            }
-        }
-    </style>
+    <!-- External responsive stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
         <h1>Accessible Enterprise Dashboard</h1>
         <p>Monitor users, projects, tasks, and performance in one place.</p>
@@ -273,8 +29,10 @@
     </header>
 
     <div class="layout">
+
         <aside aria-labelledby="sidebar-title">
             <h2 id="sidebar-title">Dashboard Menu</h2>
+
             <nav aria-label="Dashboard sections">
                 <ul>
                     <li><a href="#overview">Dashboard Overview</a></li>
@@ -286,11 +44,14 @@
         </aside>
 
         <main id="main-content">
+
+            <!-- Dashboard Overview -->
             <section id="overview" aria-labelledby="overview-title">
                 <h2 id="overview-title">Dashboard Overview</h2>
                 <p>Here is a summary of current project activity.</p>
 
                 <div class="cards">
+
                     <article>
                         <h3>Total Users</h3>
                         <p class="number">250</p>
@@ -308,9 +69,11 @@
                         <p class="number">86</p>
                         <p>Tasks completed</p>
                     </article>
+
                 </div>
             </section>
 
+            <!-- Project Data -->
             <section id="projects" aria-labelledby="projects-title">
                 <h2 id="projects-title">Project Data</h2>
                 <p>Review project owners, progress, and current status.</p>
@@ -318,6 +81,7 @@
                 <div class="table-container">
                     <table>
                         <caption>Current project information</caption>
+
                         <thead>
                             <tr>
                                 <th scope="col">Project Name</th>
@@ -326,6 +90,7 @@
                                 <th scope="col">Progress</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <th scope="row">Website Redesign</th>
@@ -333,12 +98,14 @@
                                 <td><span class="status">In progress</span></td>
                                 <td>70%</td>
                             </tr>
+
                             <tr>
                                 <th scope="row">Mobile Application</th>
                                 <td>Rahul</td>
                                 <td><span class="status">In progress</span></td>
                                 <td>45%</td>
                             </tr>
+
                             <tr>
                                 <th scope="row">Data Analytics</th>
                                 <td>Priya</td>
@@ -350,6 +117,7 @@
                 </div>
             </section>
 
+            <!-- Monthly Reports -->
             <section id="reports" aria-labelledby="reports-title">
                 <h2 id="reports-title">Monthly Reports</h2>
                 <p>Summary of monthly project performance.</p>
@@ -357,6 +125,7 @@
                 <div class="table-container">
                     <table>
                         <caption>Monthly performance summary</caption>
+
                         <thead>
                             <tr>
                                 <th scope="col">Month</th>
@@ -364,17 +133,20 @@
                                 <th scope="col">Projects Reviewed</th>
                             </tr>
                         </thead>
+
                         <tbody>
                             <tr>
                                 <th scope="row">August</th>
                                 <td>24</td>
                                 <td>8</td>
                             </tr>
+
                             <tr>
                                 <th scope="row">September</th>
                                 <td>31</td>
                                 <td>10</td>
                             </tr>
+
                             <tr>
                                 <th scope="row">October</th>
                                 <td>31</td>
@@ -385,6 +157,7 @@
                 </div>
             </section>
 
+            <!-- User Settings -->
             <section id="settings" aria-labelledby="settings-title">
                 <h2 id="settings-title">User Settings</h2>
                 <p>Update your user information using this accessible form.</p>
@@ -438,23 +211,29 @@
                 <p id="form-message" role="status" aria-live="polite"></p>
             </section>
 
+            <!-- Accessibility Information -->
             <section aria-labelledby="information-title">
                 <h2 id="information-title">More Information</h2>
                 <p>Learn about the accessibility features of this dashboard.</p>
+
                 <button type="button" id="open-dialog">
                     View Accessibility Information
                 </button>
             </section>
+
         </main>
     </div>
 
+    <!-- Accessible Dialog -->
     <dialog id="accessibility-dialog" aria-labelledby="dialog-title">
         <h2 id="dialog-title">Accessibility Information</h2>
+
         <p>
             This dashboard uses semantic HTML, labelled form controls,
             keyboard focus indicators, accessible tables, and responsive
             layouts to improve usability.
         </p>
+
         <form method="dialog">
             <button type="submit">Close</button>
         </form>
@@ -468,13 +247,16 @@
     <script>
         const settingsForm = document.getElementById("settings-form");
         const formMessage = document.getElementById("form-message");
+
         const informationDialog = document.getElementById(
             "accessibility-dialog"
         );
+
         const openDialogButton = document.getElementById("open-dialog");
 
         settingsForm.addEventListener("submit", function (event) {
             event.preventDefault();
+
             formMessage.textContent =
                 "Settings validated successfully. This demo does not save data to a server.";
         });
@@ -483,5 +265,6 @@
             informationDialog.showModal();
         });
     </script>
+
 </body>
 </html>
