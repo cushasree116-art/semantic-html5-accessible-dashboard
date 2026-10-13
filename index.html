@@ -1,306 +1,291 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="An accessible, responsive dashboard with project statistics and reports.">
+          content="A responsive social media analytics dashboard">
 
-    <title>Accessible Enterprise Dashboard</title>
+    <title>Social Media Dashboard</title>
 
-    <!-- CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="container">
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-brand">
-            <span class="brand-icon" aria-hidden="true">⚙️</span>
-
+        <!-- HEADER -->
+        <header class="header">
             <div>
-                <h1>Accessible Enterprise Dashboard</h1>
-                <p>Monitor users, projects, tasks, and performance.</p>
+                <h1>Social Media Dashboard</h1>
+                <p>Track your social media performance</p>
+            </div>
+
+            <div class="header-right">
+                <span id="current-date"></span>
+                <span id="clock"></span>
+
+                <button id="theme-toggle" class="theme-btn"
+                        type="button">
+                    🌙 Dark Mode
+                </button>
+            </div>
+        </header>
+
+        <!-- WELCOME MESSAGE -->
+        <section class="welcome-section">
+            <h2 id="welcome-message">
+                Welcome to your dashboard!
+            </h2>
+
+            <p>Monitor your social media statistics in one place.</p>
+
+            <button id="refresh-dashboard" class="refresh-btn"
+                    type="button">
+                🔄 Refresh Dashboard
+            </button>
+        </section>
+
+        <!-- SUMMARY CARDS -->
+        <section class="dashboard-cards">
+
+            <article class="card">
+                <h3>Total Followers</h3>
+                <h2 data-target="38000">0</h2>
+                <p>Across all platforms</p>
+            </article>
+
+            <article class="card">
+                <h3>Total Likes</h3>
+                <h2 data-target="26000">0</h2>
+                <p>Engagement overview</p>
+            </article>
+
+            <article class="card">
+                <h3>Total Posts</h3>
+                <h2 data-target="1225">0</h2>
+                <p>Published content</p>
+            </article>
+
+            <article class="card">
+                <h3>Engagement Rate</h3>
+                <h2>5.2%</h2>
+                <p>Overall performance</p>
+            </article>
+
+        </section>
+
+        <!-- SOCIAL MEDIA PLATFORMS -->
+        <section>
+            <h2 class="section-title">Social Media Platforms</h2>
+
+            <div class="social-grid">
+
+                <article class="social-card instagram">
+                    <div class="platform-icon">📸</div>
+                    <h3>Instagram</h3>
+
+                    <p class="stat">12,500</p>
+                    <p>Followers</p>
+
+                    <button class="details-btn"
+                            data-platform="instagram"
+                            type="button">
+                        View Details
+                    </button>
+                </article>
+
+                <article class="social-card youtube">
+                    <div class="platform-icon">▶️</div>
+                    <h3>YouTube</h3>
+
+                    <p class="stat">8,500</p>
+                    <p>Subscribers</p>
+
+                    <button class="details-btn"
+                            data-platform="youtube"
+                            type="button">
+                        View Details
+                    </button>
+                </article>
+
+                <article class="social-card facebook">
+                    <div class="platform-icon">📘</div>
+                    <h3>Facebook</h3>
+
+                    <p class="stat">10,200</p>
+                    <p>Followers</p>
+
+                    <button class="details-btn"
+                            data-platform="facebook"
+                            type="button">
+                        View Details
+                    </button>
+                </article>
+
+                <article class="social-card twitter">
+                    <div class="platform-icon">𝕏</div>
+                    <h3>X (Twitter)</h3>
+
+                    <p class="stat">6,800</p>
+                    <p>Followers</p>
+
+                    <button class="details-btn"
+                            data-platform="twitter"
+                            type="button">
+                        View Details
+                    </button>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ANALYTICS -->
+        <section>
+            <h2 class="section-title">Analytics Overview</h2>
+
+            <div class="analytics-section">
+
+                <article class="analytics-card">
+                    <h3>Weekly Performance</h3>
+
+                    <div class="chart">
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 40%;"></div>
+                            <span>Mon</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 65%;"></div>
+                            <span>Tue</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 50%;"></div>
+                            <span>Wed</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 80%;"></div>
+                            <span>Thu</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 60%;"></div>
+                            <span>Fri</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 90%;"></div>
+                            <span>Sat</span>
+                        </div>
+
+                        <div class="bar-group">
+                            <div class="bar" style="height: 70%;"></div>
+                            <span>Sun</span>
+                        </div>
+
+                    </div>
+                </article>
+
+                <article class="analytics-card">
+                    <h3>Performance Summary</h3>
+
+                    <div class="performance-item">
+                        <span>Instagram</span>
+                        <strong>85%</strong>
+                        <div class="progress">
+                            <div style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="performance-item">
+                        <span>YouTube</span>
+                        <strong>70%</strong>
+                        <div class="progress">
+                            <div style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="performance-item">
+                        <span>Facebook</span>
+                        <strong>65%</strong>
+                        <div class="progress">
+                            <div style="width: 65%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="performance-item">
+                        <span>X (Twitter)</span>
+                        <strong>55%</strong>
+                        <div class="progress">
+                            <div style="width: 55%;"></div>
+                        </div>
+                    </div>
+
+                </article>
+
+            </div>
+        </section>
+
+        <!-- RECENT ACTIVITY -->
+        <section class="activity-section">
+            <h2>Recent Activity</h2>
+
+            <div class="activity-item">
+                <p>📸 Instagram post published</p>
+                <span>Today</span>
+            </div>
+
+            <div class="activity-item">
+                <p>▶️ New YouTube video uploaded</p>
+                <span>Yesterday</span>
+            </div>
+
+            <div class="activity-item">
+                <p>📘 Facebook engagement increased</p>
+                <span>2 days ago</span>
+            </div>
+
+            <div class="activity-item">
+                <p>𝕏 New update shared</p>
+                <span>3 days ago</span>
+            </div>
+        </section>
+
+        <!-- POPUP -->
+        <div class="modal" id="social-modal"
+             aria-hidden="true">
+
+            <div class="modal-content"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="modal-title">
+
+                <button class="close-btn"
+                        type="button"
+                        aria-label="Close popup">
+                    &times;
+                </button>
+
+                <h2 id="modal-title">Social Media Details</h2>
+
+                <div id="modal-body"></div>
+
             </div>
         </div>
 
-        <button
-            type="button"
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-pressed="false">
-            🌙 Switch to dark theme
-        </button>
-    </header>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>Social Media Dashboard | Responsive Web Design Project</p>
+        </footer>
 
-    <!-- Main Layout -->
-    <div class="layout">
-
-        <!-- Sidebar -->
-        <aside class="sidebar" aria-label="Main navigation">
-            <nav>
-                <ul>
-                    <li><a href="#overview" aria-current="page">🏠 Overview</a></li>
-                    <li><a href="#projects">📁 Projects</a></li>
-                    <li><a href="#reports">📊 Reports</a></li>
-                    <li><a href="#settings">⚙️ Settings</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <!-- Main Content -->
-        <main id="main-content" class="main-content">
-
-            <!-- Overview -->
-            <section id="overview">
-                <h2>Dashboard Overview</h2>
-                <p>Here is a summary of current project activity.</p>
-
-                <div class="dashboard-cards">
-
-                    <article class="card">
-                        <span class="card-icon" aria-hidden="true">👤</span>
-                        <div>
-                            <h3>Total Users</h3>
-                            <p class="stat-number">250</p>
-                            <p>Registered users</p>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <span class="card-icon" aria-hidden="true">📁</span>
-                        <div>
-                            <h3>Active Projects</h3>
-                            <p class="stat-number">12</p>
-                            <p>Projects in progress</p>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <span class="card-icon" aria-hidden="true">✅</span>
-                        <div>
-                            <h3>Completed Tasks</h3>
-                            <p class="stat-number">86</p>
-                            <p>Tasks completed</p>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-            <!-- Projects -->
-            <section id="projects" class="panel">
-                <h2>Project Data</h2>
-                <p>Review project owners, progress, and status.</p>
-
-                <div class="table-wrapper"
-                     role="region"
-                     aria-label="Project data table"
-                     tabindex="0">
-
-                    <table>
-                        <caption>Current project details</caption>
-
-                        <thead>
-                            <tr>
-                                <th scope="col">Project Name</th>
-                                <th scope="col">Owner</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Progress</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>Website Redesign</td>
-                                <td>Ananya</td>
-                                <td><span class="status progress">In progress</span></td>
-                                <td>70%</td>
-                            </tr>
-
-                            <tr>
-                                <td>Mobile Application</td>
-                                <td>Rahul</td>
-                                <td><span class="status progress">In progress</span></td>
-                                <td>45%</td>
-                            </tr>
-
-                            <tr>
-                                <td>Data Analytics</td>
-                                <td>Priya</td>
-                                <td><span class="status completed">Completed</span></td>
-                                <td>100%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Reports -->
-            <section id="reports" class="panel">
-                <h2>Monthly Reports</h2>
-                <p>Summary of monthly project performance.</p>
-
-                <div class="table-wrapper"
-                     role="region"
-                     aria-label="Monthly reports table"
-                     tabindex="0">
-
-                    <table>
-                        <caption>Monthly task and project statistics</caption>
-
-                        <thead>
-                            <tr>
-                                <th scope="col">Month</th>
-                                <th scope="col">Tasks Completed</th>
-                                <th scope="col">Projects Reviewed</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <td>August</td>
-                                <td>24</td>
-                                <td>8</td>
-                            </tr>
-
-                            <tr>
-                                <td>September</td>
-                                <td>31</td>
-                                <td>10</td>
-                            </tr>
-
-                            <tr>
-                                <td>October</td>
-                                <td>31</td>
-                                <td>12</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Settings -->
-            <section id="settings" class="panel">
-                <h2>User Settings</h2>
-                <p>Update your information using this accessible form.</p>
-
-                <form id="settings-form">
-
-                    <div class="form-group">
-                        <label for="full-name">Full name</label>
-                        <input
-                            type="text"
-                            id="full-name"
-                            name="fullName"
-                            placeholder="Enter your full name"
-                            required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            required>
-                    </div>
-
-                    <button type="submit" class="primary-button">
-                        Save Settings
-                    </button>
-
-                    <p id="form-message" role="status" aria-live="polite"></p>
-
-                </form>
-            </section>
-
-            <!-- Information -->
-            <section class="panel">
-                <h2>More Information</h2>
-                <p>Learn about the dashboard accessibility features.</p>
-
-                <button
-                    type="button"
-                    id="open-dialog"
-                    class="primary-button">
-                    View Information
-                </button>
-            </section>
-
-            <!-- Dialog -->
-            <dialog id="information-dialog" aria-labelledby="dialog-title">
-                <h2 id="dialog-title">Dashboard Information</h2>
-
-                <p>
-                    This dashboard demonstrates semantic HTML,
-                    responsive design, accessible tables, forms,
-                    keyboard navigation, and theme switching.
-                </p>
-
-                <button
-                    type="button"
-                    id="close-dialog"
-                    class="primary-button">
-                    Close
-                </button>
-            </dialog>
-
-        </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 Accessible Enterprise Dashboard</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Dark and light theme toggle
-        const themeToggle = document.getElementById("theme-toggle");
-        const html = document.documentElement;
-
-        themeToggle.addEventListener("click", function () {
-            const isDark = html.dataset.theme !== "dark";
-
-            html.dataset.theme = isDark ? "dark" : "light";
-
-            themeToggle.textContent = isDark
-                ? "☀️ Switch to light theme"
-                : "🌙 Switch to dark theme";
-
-            themeToggle.setAttribute("aria-pressed", String(isDark));
-        });
-
-        // Settings form
-        const settingsForm = document.getElementById("settings-form");
-        const formMessage = document.getElementById("form-message");
-
-        settingsForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            formMessage.textContent =
-                "Settings submitted successfully for this demo.";
-        });
-
-        // Information dialog
-        const dialog = document.getElementById("information-dialog");
-
-        document.getElementById("open-dialog")
-            .addEventListener("click", function () {
-                dialog.showModal();
-            });
-
-        document.getElementById("close-dialog")
-            .addEventListener("click", function () {
-                dialog.close();
-            });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
