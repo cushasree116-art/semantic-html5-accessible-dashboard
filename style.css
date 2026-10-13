@@ -1,428 +1,438 @@
-/* =====================================================
-   1. RESPONSIVE DESIGN TOKENS
-   ===================================================== */
+/* =========================================
+   1. DESIGN TOKENS - LIGHT THEME
+========================================= */
 
 :root {
-    /* Brand colors */
-    --primary-color: #172554;
-    --primary-hover: #263b75;
-    --secondary-color: #2563eb;
-    --accent-color: #f59e0b;
+    --primary-color: #2563eb;
+    --secondary-color: #0f766e;
 
-    /* Light theme colors */
-    --background-color: #f4f6f8;
-    --card-color: #ffffff;
-    --surface-color: #eef2ff;
-    --text-color: #222222;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+
+    --text-color: #1e293b;
     --muted-text-color: #64748b;
+
     --border-color: #cbd5e1;
 
-    /* Status colors */
+    --header-background: #172554;
+    --header-text-color: #ffffff;
+
     --success-color: #15803d;
     --warning-color: #b45309;
     --danger-color: #b91c1c;
 
-    /* Typography */
-    --font-family: Arial, Helvetica, sans-serif;
-    --font-size-small: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-medium: 1.125rem;
-    --font-size-large: 1.5rem;
-    --font-size-heading: clamp(1.5rem, 3vw, 2rem);
-    --font-size-number: clamp(1.5rem, 3vw, 2rem);
-
-    /* Spacing */
-    --spacing-xs: 4px;
     --spacing-small: 8px;
     --spacing-medium: 16px;
     --spacing-large: 24px;
-    --spacing-xl: 32px;
-    --spacing-2xl: 48px;
+    --spacing-extra-large: 32px;
 
-    /* Borders */
-    --border-radius-small: 4px;
-    --border-radius: 8px;
-    --border-radius-large: 16px;
-    --border-radius-pill: 999px;
-    --border-width: 1px;
+    --border-radius-small: 6px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 18px;
 
-    /* Shadows */
-    --card-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    --hover-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
 
-    --card-shadow-hover:
-        0 10px 24px rgba(0, 0, 0, 0.12);
+    --font-family: Arial, Helvetica, sans-serif;
 
-    --focus-shadow:
-        0 0 0 3px rgba(245, 158, 11, 0.35);
-
-    /* Layout */
-    --content-width: 1440px;
-    --sidebar-width: 220px;
-
-    /* Animation */
-    --transition-fast: 0.2s ease;
+    --transition-speed: 0.3s;
 }
 
-/* =====================================================
-   2. DARK THEME TOKENS
-   Activate using: <html data-theme="dark">
-   ===================================================== */
 
-[data-theme="dark"] {
+/* =========================================
+   2. DARK THEME
+========================================= */
+
+:root[data-theme="dark"] {
+    --primary-color: #93c5fd;
+    --secondary-color: #5eead4;
+
     --background-color: #0f172a;
-    --card-color: #1e293b;
-    --surface-color: #263449;
+    --card-background: #1e293b;
+
     --text-color: #f1f5f9;
     --muted-text-color: #cbd5e1;
+
     --border-color: #475569;
 
-    --primary-color: #93c5fd;
-    --primary-hover: #bfdbfe;
-    --secondary-color: #60a5fa;
+    --header-background: #0b1220;
+    --header-text-color: #ffffff;
 
-    --card-shadow:
-        0 4px 16px rgba(0, 0, 0, 0.25);
+    --success-color: #86efac;
+    --warning-color: #fcd34d;
+    --danger-color: #fca5a5;
 
-    --card-shadow-hover:
-        0 10px 28px rgba(0, 0, 0, 0.35);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --hover-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* =====================================================
-   3. GLOBAL RESET
-   ===================================================== */
 
-*,
-*::before,
-*::after {
+/* =========================================
+   3. GLOBAL RESET
+========================================= */
+
+* {
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: var(--spacing-large);
-    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
-    min-width: 0;
-    max-width: 100%;
+    padding: 0;
+
     font-family: var(--font-family);
-    font-size: var(--font-size-base);
+    font-size: 16px;
     line-height: 1.6;
+
     color: var(--text-color);
-    background: var(--background-color);
+    background-color: var(--background-color);
 
     transition:
-        background-color var(--transition-fast),
-        color var(--transition-fast);
+        background-color var(--transition-speed),
+        color var(--transition-speed);
 }
 
-img,
-video,
-svg {
+img {
     max-width: 100%;
     height: auto;
-}
-
-input,
-select,
-textarea,
-button {
-    font: inherit;
 }
 
 button,
 input,
 select,
 textarea {
-    max-width: 100%;
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 a {
-    color: #0645ad;
-    overflow-wrap: anywhere;
+    color: var(--primary-color);
 }
 
-[data-theme="dark"] a {
-    color: #93c5fd;
-}
-
-p,
-h1,
-h2,
-h3,
-h4 {
-    overflow-wrap: anywhere;
+p {
+    overflow-wrap: break-word;
 }
 
 h1,
 h2,
-h3,
-h4 {
-    line-height: 1.3;
-}
-
-h1 {
-    font-size: var(--font-size-heading);
-}
-
-h2 {
-    font-size: var(--font-size-large);
-}
-
 h3 {
-    font-size: var(--font-size-medium);
+    line-height: 1.3;
+    overflow-wrap: break-word;
 }
+
+
+/* =========================================
+   4. KEYBOARD ACCESSIBILITY
+========================================= */
 
 :focus-visible {
     outline: 3px solid #f59e0b;
-    outline-offset: 3px;
-    box-shadow: var(--focus-shadow);
+    outline-offset: 4px;
 }
 
-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
+/* Skip link for keyboard users */
+
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1000;
+
+    padding: 12px 16px;
+
+    color: #ffffff;
+    background: #172554;
+
+    border-radius: 4px;
+
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+.skip-link:focus {
+    transform: translateY(0);
 }
 
-/* =====================================================
-   4. HEADER AND NAVIGATION
-   ===================================================== */
+
+/* =========================================
+   5. HEADER
+========================================= */
 
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-medium);
+
     padding: var(--spacing-large);
-    color: #ffffff;
-    background: var(--primary-color);
+
+    color: var(--header-text-color);
+    background: var(--header-background);
 }
 
 header h1 {
-    margin-top: 0;
-    margin-bottom: var(--spacing-medium);
+    margin: 0;
+    font-size: 1.8rem;
 }
 
-header nav ul,
-nav ul {
+header p {
+    margin: 8px 0 0;
+}
+
+
+/* =========================================
+   6. NAVIGATION
+========================================= */
+
+nav {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: var(--spacing-medium);
+    gap: 10px;
 
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
+    width: 100%;
+    margin-top: var(--spacing-small);
 }
 
-header nav a {
+nav a {
     display: inline-block;
-    padding: var(--spacing-small);
+
+    padding: 8px 12px;
 
     color: #ffffff;
-    font-weight: bold;
     text-decoration: none;
 
     border-radius: var(--border-radius-small);
 
     transition:
-        background-color var(--transition-fast),
-        color var(--transition-fast);
+        background-color var(--transition-speed),
+        transform var(--transition-speed);
 }
 
-header nav a:hover {
-    background: rgba(255, 255, 255, 0.15);
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
 }
 
-/* =====================================================
-   5. MAIN DASHBOARD LAYOUT
-   MOBILE-FIRST: ONE COLUMN BY DEFAULT
-   ===================================================== */
+nav a:focus-visible {
+    outline-color: #fbbf24;
+}
+
+
+/* =========================================
+   7. THEME TOGGLE BUTTON
+========================================= */
+
+#theme-toggle {
+    padding: 10px 16px;
+
+    color: #ffffff;
+    background: #334155;
+
+    border: 1px solid #64748b;
+    border-radius: var(--border-radius-small);
+
+    transition:
+        background-color var(--transition-speed),
+        transform var(--transition-speed);
+}
+
+#theme-toggle:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   8. MAIN LAYOUT - MOBILE FIRST
+========================================= */
 
 .layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: var(--spacing-medium);
+    gap: var(--spacing-large);
 
     width: 100%;
-    max-width: var(--content-width);
-    min-width: 0;
+    max-width: 1440px;
 
-    margin-inline: auto;
+    margin: 0 auto;
     padding: var(--spacing-medium);
 }
 
 main {
     min-width: 0;
-    width: 100%;
-}
-
-aside,
-section {
-    min-width: 0;
-    padding: var(--spacing-medium);
-
-    background: var(--card-color);
-
-    border: var(--border-width) solid var(--border-color);
-    border-radius: var(--border-radius);
-
-    box-shadow: var(--card-shadow);
 }
 
 aside {
-    align-self: start;
-}
-
-aside ul {
-    padding-left: 20px;
-}
-
-aside li {
-    margin-bottom: 12px;
+    min-width: 0;
 }
 
 section {
+    min-width: 0;
     margin-bottom: var(--spacing-large);
-    scroll-margin-top: var(--spacing-medium);
 }
 
-section h2 {
-    margin-top: 0;
-    color: var(--text-color);
+
+/* =========================================
+   9. GLASSMORPHISM PANELS
+========================================= */
+
+.glass-panel {
+    background: var(--card-background);
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-medium);
+
+    box-shadow: var(--card-shadow);
+
+    transition:
+        box-shadow var(--transition-speed),
+        transform var(--transition-speed),
+        background-color var(--transition-speed);
 }
 
-/* =====================================================
-   6. DASHBOARD CARDS
-   MOBILE-FIRST: ONE COLUMN
-   ===================================================== */
+.glass-panel:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+
+/* =========================================
+   10. CARDS
+========================================= */
 
 .cards {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: var(--spacing-medium);
-
-    min-width: 0;
 }
 
 article {
     min-width: 0;
-    padding: var(--spacing-medium);
+    padding: var(--spacing-large);
 
-    background: var(--surface-color);
+    background: var(--card-background);
 
-    border: var(--border-width) solid var(--border-color);
-    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-medium);
 
     box-shadow: var(--card-shadow);
 
-    overflow-wrap: anywhere;
-
     transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        border-color var(--transition-fast);
+        transform var(--transition-speed),
+        box-shadow var(--transition-speed),
+        background-color var(--transition-speed);
+}
+
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--hover-shadow);
 }
 
 article h3 {
     margin-top: 0;
 }
 
-article p {
-    overflow-wrap: anywhere;
-}
-
 .number {
     margin: var(--spacing-small) 0;
 
-    color: var(--text-color);
-    font-size: var(--font-size-number);
+    color: var(--primary-color);
+
+    font-size: 2rem;
     font-weight: bold;
 
     overflow-wrap: anywhere;
 }
 
-@media (hover: hover) {
-    article:hover {
-        transform: translateY(-3px);
-        box-shadow: var(--card-shadow-hover);
-    }
-}
 
-/* =====================================================
-   7. ACCESSIBLE TABLES
-   ===================================================== */
+/* =========================================
+   11. TABLES
+========================================= */
 
 .table-container {
     width: 100%;
     max-width: 100%;
-    min-width: 0;
 
     overflow-x: auto;
-    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
 
-    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-small);
 }
 
 table {
     width: 100%;
-    margin-top: var(--spacing-medium);
+    min-width: 600px;
 
     border-collapse: collapse;
+
+    background: var(--card-background);
     color: var(--text-color);
 }
 
 caption {
-    padding-bottom: var(--spacing-small);
-    text-align: left;
+    padding: var(--spacing-medium);
+
     font-weight: bold;
+    text-align: left;
+
+    color: var(--text-color);
+    background: var(--card-background);
 }
 
 th,
 td {
     padding: 12px;
 
-    border: var(--border-width) solid var(--border-color);
-
     text-align: left;
     vertical-align: top;
 
-    overflow-wrap: anywhere;
+    border: 1px solid var(--border-color);
+
+    overflow-wrap: break-word;
 }
 
 th {
-    background: var(--surface-color);
+    color: var(--text-color);
+    background: var(--background-color);
 }
 
-.status {
-    font-weight: bold;
+tbody tr:hover {
+    background: var(--background-color);
 }
 
-/* =====================================================
-   8. ACCESSIBLE FORMS
-   ===================================================== */
 
-.form-group {
+/* =========================================
+   12. FORMS
+========================================= */
+
+form {
+    width: 100%;
+    max-width: 700px;
+}
+
+fieldset {
     min-width: 0;
-    margin-bottom: var(--spacing-medium);
+    margin: 0 0 var(--spacing-large);
+    padding: var(--spacing-medium);
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-medium);
+}
+
+legend {
+    padding: 0 var(--spacing-small);
+    font-weight: bold;
 }
 
 label {
     display: block;
     margin-bottom: 6px;
 
-    color: var(--text-color);
     font-weight: bold;
 }
 
@@ -432,13 +442,13 @@ textarea {
     display: block;
 
     width: 100%;
-    min-width: 0;
     max-width: 100%;
 
-    padding: 10px 12px;
+    margin-bottom: var(--spacing-medium);
+    padding: 12px;
 
     color: var(--text-color);
-    background: var(--card-color);
+    background: var(--card-background);
 
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius-small);
@@ -449,246 +459,271 @@ textarea {
     resize: vertical;
 }
 
-fieldset {
-    min-width: 0;
-    margin-bottom: var(--spacing-large);
-    padding: var(--spacing-medium);
-
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary-color);
 }
 
-legend {
-    padding: 0 var(--spacing-small);
-    font-weight: bold;
-}
 
-/* =====================================================
-   9. BUTTONS
-   ===================================================== */
+/* =========================================
+   13. BUTTONS
+========================================= */
 
-button {
+button,
+input[type="submit"] {
     display: inline-block;
 
-    min-height: 44px;
-    padding: 10px 16px;
+    width: auto;
+    max-width: 100%;
+
+    padding: 12px 18px;
 
     color: #ffffff;
-    background: var(--primary-color);
+    background: #1d4ed8;
 
-    border: 2px solid transparent;
+    border: none;
     border-radius: var(--border-radius-small);
 
-    cursor: pointer;
-
     transition:
-        background-color var(--transition-fast),
-        transform var(--transition-fast);
+        background-color var(--transition-speed),
+        transform var(--transition-speed),
+        box-shadow var(--transition-speed);
 }
 
-button:hover {
-    background: var(--primary-hover);
+button:hover,
+input[type="submit"]:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
 }
 
-button:active {
-    transform: scale(0.98);
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
 }
 
-.secondary-button {
-    margin-left: var(--spacing-small);
 
-    color: var(--text-color);
-    background: var(--card-color);
+/* =========================================
+   14. STATUS MESSAGES
+========================================= */
 
-    border-color: var(--border-color);
+#form-message {
+    margin-top: var(--spacing-medium);
+    padding: var(--spacing-medium);
+
+    color: var(--success-color);
+
+    overflow-wrap: break-word;
 }
 
-.secondary-button:hover {
-    color: var(--text-color);
-    background: var(--surface-color);
-}
 
-@media (max-width: 480px) {
-    button {
-        max-width: 100%;
-        white-space: normal;
-    }
-
-    .secondary-button {
-        margin-top: var(--spacing-small);
-        margin-left: 0;
-    }
-}
-
-/* =====================================================
-   10. ACCESSIBLE DIALOG
-   ===================================================== */
+/* =========================================
+   15. ACCESSIBLE DIALOG
+========================================= */
 
 dialog {
     width: calc(100% - 32px);
-    max-width: 480px;
+    max-width: 600px;
     max-height: 85vh;
-
-    overflow-y: auto;
 
     padding: var(--spacing-large);
 
     color: var(--text-color);
-    background: var(--card-color);
+    background: var(--card-background);
 
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius-large);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-medium);
 
-    box-shadow: var(--card-shadow-hover);
+    box-shadow: var(--hover-shadow);
 }
 
 dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(15, 23, 42, 0.65);
 }
 
-/* =====================================================
-   11. GLASSMORPHISM UTILITY
-   Apply class="glass-panel" to suitable elements.
-   ===================================================== */
-
-.glass-panel {
-    background: rgba(255, 255, 255, 0.75);
-
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: var(--border-radius-large);
-
-    box-shadow: var(--card-shadow);
-
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
+dialog h2 {
+    margin-top: 0;
 }
 
-[data-theme="dark"] .glass-panel {
-    background: rgba(30, 41, 59, 0.85);
-    border-color: rgba(148, 163, 184, 0.25);
-}
 
-/* =====================================================
-   12. FOOTER
-   ===================================================== */
+/* =========================================
+   16. FOOTER
+========================================= */
 
 footer {
+    margin-top: var(--spacing-large);
     padding: var(--spacing-large);
 
-    color: #ffffff;
-    background: var(--primary-color);
+    color: var(--header-text-color);
+    background: var(--header-background);
 
     text-align: center;
 }
 
 footer p {
     margin: 0;
-    overflow-wrap: anywhere;
 }
 
-/* =====================================================
-   13. SMALL MOBILE
-   320px AND BELOW
-   ===================================================== */
+
+/* =========================================
+   17. SMALL MOBILE DEVICES
+   Up to 320px
+========================================= */
 
 @media (max-width: 320px) {
-    .layout {
-        padding: var(--spacing-small);
-        gap: var(--spacing-small);
+    body {
+        font-size: 14px;
     }
 
-    header,
-    section,
-    aside {
+    header {
         padding: 12px;
     }
 
-    header nav ul,
-    nav ul {
-        gap: 6px;
+    header h1 {
+        font-size: 1.4rem;
     }
 
-    header nav a {
-        padding: 6px;
-    }
-
-    .cards {
-        gap: var(--spacing-small);
+    .layout {
+        padding: 10px;
+        gap: 16px;
     }
 
     article {
-        padding: 12px;
+        padding: 14px;
     }
 
     .number {
-        font-size: 24px;
+        font-size: 1.6rem;
     }
 
-    th,
-    td {
-        padding: 8px;
+    button,
+    input[type="submit"] {
+        max-width: 100%;
+        padding: 10px 12px;
     }
 }
 
-/* =====================================================
-   14. TABLET
-   768px AND ABOVE
-   ===================================================== */
+
+/* =========================================
+   18. MOBILE DEVICES
+   Up to 767px
+========================================= */
+
+@media (max-width: 767px) {
+    header {
+        align-items: stretch;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    #theme-toggle {
+        align-self: flex-start;
+    }
+
+    .cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================
+   19. TABLET DEVICES
+   768px to 1023px
+========================================= */
 
 @media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header > div {
+        flex: 1 1 300px;
+    }
+
+    nav {
+        width: auto;
+        margin-top: 0;
+    }
+
     .layout {
-        grid-template-columns: 180px minmax(0, 1fr);
-        gap: var(--spacing-medium);
-        padding: var(--spacing-medium);
+        grid-template-columns: 200px minmax(0, 1fr);
+        padding: var(--spacing-large);
     }
 
     .cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    aside,
-    section {
-        padding: var(--spacing-medium);
-    }
 }
 
-/* =====================================================
-   15. DESKTOP
-   1024px AND ABOVE
-   ===================================================== */
+
+/* =========================================
+   20. DESKTOP DEVICES
+   1024px and above
+========================================= */
 
 @media (min-width: 1024px) {
     .layout {
-        grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+        grid-template-columns: 240px minmax(0, 1fr);
         gap: var(--spacing-large);
-        padding: var(--spacing-large);
     }
 
     .cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-
-    aside,
-    section {
-        padding: 20px;
-    }
 }
 
-/* =====================================================
-   16. LARGE DESKTOP
-   1440px AND ABOVE
-   ===================================================== */
+
+/* =========================================
+   21. LARGE DESKTOP SCREENS
+   1440px and above
+========================================= */
 
 @media (min-width: 1440px) {
     .layout {
-        padding: var(--spacing-xl);
+        padding: var(--spacing-extra-large);
+        gap: var(--spacing-extra-large);
     }
 
-    .cards {
-        gap: var(--spacing-large);
+    header {
+        padding: var(--spacing-extra-large);
+    }
+}
+
+
+/* =========================================
+   22. REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    article {
-        padding: var(--spacing-large);
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
