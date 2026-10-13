@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="An accessible, responsive enterprise dashboard for monitoring users, projects, tasks, and reports.">
-
-    <meta name="theme-color" content="#172554">
+          content="An accessible and responsive enterprise dashboard.">
 
     <title>Accessible Enterprise Dashboard</title>
 
@@ -16,7 +14,6 @@
 
 <body>
 
-    <!-- Skip Link -->
     <a href="#main-content" class="skip-link">
         Skip to main content
     </a>
@@ -32,14 +29,7 @@
             </p>
         </div>
 
-        <button
-            type="button"
-            id="theme-toggle"
-            aria-pressed="false">
-            Switch to Dark Theme
-        </button>
-
-        <!-- Main Navigation -->
+        <!-- Navigation -->
         <nav aria-label="Main navigation">
             <ul>
                 <li><a href="#overview">Overview</a></li>
@@ -61,7 +51,7 @@
 
             <nav aria-label="Dashboard menu">
                 <ul>
-                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#overview">Dashboard Overview</a></li>
                     <li><a href="#projects">Project Data</a></li>
                     <li><a href="#reports">Monthly Reports</a></li>
                     <li><a href="#settings">User Settings</a></li>
@@ -74,13 +64,9 @@
         <main id="main-content">
 
             <!-- Overview -->
-            <section id="overview" aria-labelledby="overview-title">
-
-                <h2 id="overview-title">Dashboard Overview</h2>
-
-                <p>
-                    Here is a summary of current project activity.
-                </p>
+            <section id="overview">
+                <h2>Dashboard Overview</h2>
+                <p>Here is a summary of current project activity.</p>
 
                 <div class="dashboard-cards">
 
@@ -103,20 +89,14 @@
                     </article>
 
                 </div>
-
             </section>
 
-            <!-- Project Data -->
-            <section id="projects" aria-labelledby="projects-title">
-
-                <h2 id="projects-title">Project Data</h2>
-
-                <p>
-                    Review project owners, progress, and current status.
-                </p>
+            <!-- Projects -->
+            <section id="projects">
+                <h2>Project Data</h2>
+                <p>Review project owners, progress, and current status.</p>
 
                 <div class="table-container">
-
                     <table>
                         <caption>Current project information</caption>
 
@@ -134,57 +114,33 @@
                                 <th scope="row">Website Redesign</th>
                                 <td>Ananya</td>
                                 <td>In progress</td>
-                                <td>
-                                    <span>70%</span>
-                                    <progress value="70" max="100"
-                                              aria-label="Website Redesign progress">
-                                        70%
-                                    </progress>
-                                </td>
+                                <td>70%</td>
                             </tr>
 
                             <tr>
                                 <th scope="row">Mobile Application</th>
                                 <td>Rahul</td>
                                 <td>In progress</td>
-                                <td>
-                                    <span>45%</span>
-                                    <progress value="45" max="100"
-                                              aria-label="Mobile Application progress">
-                                        45%
-                                    </progress>
-                                </td>
+                                <td>45%</td>
                             </tr>
 
                             <tr>
                                 <th scope="row">Data Analytics</th>
                                 <td>Priya</td>
                                 <td>Completed</td>
-                                <td>
-                                    <span>100%</span>
-                                    <progress value="100" max="100"
-                                              aria-label="Data Analytics progress">
-                                        100%
-                                    </progress>
-                                </td>
+                                <td>100%</td>
                             </tr>
                         </tbody>
-
                     </table>
-
                 </div>
-
             </section>
 
-            <!-- Monthly Reports -->
-            <section id="reports" aria-labelledby="reports-title">
-
-                <h2 id="reports-title">Monthly Reports</h2>
-
+            <!-- Reports -->
+            <section id="reports">
+                <h2>Monthly Reports</h2>
                 <p>Summary of monthly project performance.</p>
 
                 <div class="table-container">
-
                     <table>
                         <caption>Monthly performance summary</caption>
 
@@ -215,32 +171,21 @@
                                 <td>12</td>
                             </tr>
                         </tbody>
-
                     </table>
-
                 </div>
-
             </section>
 
-            <!-- User Settings -->
-            <section id="settings" aria-labelledby="settings-title">
-
-                <h2 id="settings-title">User Settings</h2>
-
-                <p>
-                    Update your user information using this accessible form.
-                </p>
+            <!-- Settings -->
+            <section id="settings">
+                <h2>User Settings</h2>
+                <p>Update your user information using this accessible form.</p>
 
                 <form id="settings-form">
-
                     <fieldset>
                         <legend>Personal Information</legend>
 
                         <div class="form-group">
-                            <label for="full-name">
-                                Full name (required)
-                            </label>
-
+                            <label for="full-name">Full name (required)</label>
                             <input
                                 type="text"
                                 id="full-name"
@@ -250,10 +195,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email">
-                                Email address (required)
-                            </label>
-
+                            <label for="email">Email address (required)</label>
                             <input
                                 type="email"
                                 id="email"
@@ -262,85 +204,47 @@
                                 required>
                         </div>
 
+                        <button type="submit">Save Settings</button>
+
+                        <p id="form-message"
+                           role="status"
+                           aria-live="polite"></p>
                     </fieldset>
-
-                    <button type="submit">Save Settings</button>
-
-                    <p id="form-message"
-                       class="status"
-                       role="status"
-                       aria-live="polite"></p>
-
                 </form>
-
             </section>
 
-            <!-- Additional Information -->
-            <section aria-labelledby="information-title">
-
-                <h2 id="information-title">More Information</h2>
-
-                <p>
-                    Use the button below to open the accessible information dialog.
-                </p>
+            <!-- Information -->
+            <section>
+                <h2>More Information</h2>
+                <p>Learn about the dashboard accessibility features.</p>
 
                 <button type="button" id="open-dialog">
                     View Information
                 </button>
-
             </section>
 
         </main>
-
     </div>
 
-    <!-- Accessible Dialog -->
-    <dialog id="information-dialog"
-            aria-labelledby="dialog-title"
-            aria-describedby="dialog-description">
-
+    <!-- Dialog -->
+    <dialog id="information-dialog" aria-labelledby="dialog-title">
         <h2 id="dialog-title">Dashboard Information</h2>
 
-        <p id="dialog-description">
+        <p>
             This dashboard demonstrates semantic HTML5, responsive design,
-            accessible navigation, data tables, forms, and keyboard support.
+            accessible tables, forms, and navigation.
         </p>
 
-        <button type="button" id="close-dialog">
-            Close
-        </button>
-
+        <button type="button" id="close-dialog">Close</button>
     </dialog>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p>
-            &copy; 2026 Accessible Enterprise Dashboard.
-            Built with semantic HTML5 and responsive CSS.
-        </p>
+        <p>&copy; 2026 Accessible Enterprise Dashboard.</p>
     </footer>
 
     <!-- JavaScript -->
     <script>
-        // Dark Theme Toggle
-        const themeToggle = document.getElementById("theme-toggle");
-
-        themeToggle.addEventListener("click", function () {
-            const isDark =
-                document.documentElement.getAttribute("data-theme") === "dark";
-
-            const newTheme = isDark ? "light" : "dark";
-
-            document.documentElement.setAttribute("data-theme", newTheme);
-
-            themeToggle.setAttribute("aria-pressed", String(!isDark));
-
-            themeToggle.textContent = isDark
-                ? "Switch to Dark Theme"
-                : "Switch to Light Theme";
-        });
-
-        // Settings Form
         const settingsForm = document.getElementById("settings-form");
         const formMessage = document.getElementById("form-message");
 
@@ -354,30 +258,17 @@
 
             formMessage.textContent =
                 "Settings saved successfully for this demo.";
-
         });
 
-        // Open Dialog
-        const informationDialog =
-            document.getElementById("information-dialog");
+        const dialog = document.getElementById("information-dialog");
 
-        const openDialogButton =
-            document.getElementById("open-dialog");
-
-        const closeDialogButton =
-            document.getElementById("close-dialog");
-
-        openDialogButton.addEventListener("click", function () {
-            if (typeof informationDialog.showModal === "function") {
-                informationDialog.showModal();
-            }
+        document.getElementById("open-dialog").addEventListener("click", function () {
+            dialog.showModal();
         });
 
-        closeDialogButton.addEventListener("click", function () {
-            informationDialog.close();
+        document.getElementById("close-dialog").addEventListener("click", function () {
+            dialog.close();
         });
-
-        // Close Dialog with Escape is supported by the native dialog element.
     </script>
 
 </body>
